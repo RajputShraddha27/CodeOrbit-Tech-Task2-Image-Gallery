@@ -1,0 +1,28 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: 82px;
+}
+
+a,
+button {
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    opacity,
+    transform;
+}
+
+@media (max-width: 600px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+}

@@ -1,0 +1,308 @@
+.navbar-header{
+  width:100%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(248,247,244,.92);
+  border-bottom:1px solid rgba(23,23,23,.1);
+  backdrop-filter:blur(18px);
+}
+.lensora-navbar{
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+/* Logo */
+.navbar-logo{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#171717;
+  text-decoration:none;
+  transition:transform .25s ease;
+}
+.navbar-logo:hover{
+  color:#171717;
+  transform:translateY(-2px);
+}
+.logo-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  color:#f8f7f4;
+  font-size:22px;
+  border-radius:50%;
+  background:#171717;
+  transition:transform .5s ease,background .25s ease,box-shadow .25s ease;
+}
+.navbar-logo:hover .logo-icon{
+  background:#6757d9;
+  transform:rotate(90deg);
+  box-shadow:0 8px 20px rgba(103,87,217,.25);
+}
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  font-size:21px;
+  font-weight:750;
+  line-height:1;
+  letter-spacing:-.6px;
+  transition:color .25s ease;
+}
+.navbar-logo:hover .logo-text{
+  color:#6757d9;
+}
+.logo-text small{
+  margin-top:5px;
+  color:#77736c;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
+  transition:color .25s ease;
+}
+.navbar-logo:hover .logo-text small{
+  color:#6757d9;
+}
+/* Navigation */
+.navbar-links{
+  display:flex;
+  align-items:center;
+  gap:35px;
+}
+.navbar-links a{
+  position:relative;
+  padding:8px 0;
+  color:#5c5954;
+  font-size:14px;
+  font-weight:500;
+  text-decoration:none;
+  letter-spacing:.2px;
+  transition:color .25s ease,transform .25s ease;
+}
+.navbar-links a::before{
+  content:"";
+  width:5px;
+  height:5px;
+  position:absolute;
+  left:50%;
+  bottom:-2px;
+  border-radius:50%;
+  background:#6757d9;
+  opacity:0;
+  transform:translateX(-50%) scale(0);
+  transition:opacity .25s ease,transform .25s ease;
+}
+.navbar-links a:hover{
+  color:#6757d9;
+  transform:translateY(-2px);
+}
+.navbar-links a:hover::before{
+  opacity:1;
+  transform:translateX(-50%) scale(1);
+}
+/* Navbar Actions */
+.navbar-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.search-toggle,.menu-toggle{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  color:#171717;
+  font-size:19px;
+  border:1px solid #d8d5cf;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+  transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.search-toggle:hover,.menu-toggle:hover{
+  color:#fff;
+  border-color:#6757d9;
+  background:#6757d9;
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 8px 18px rgba(103,87,217,.22);
+}
+.search-toggle:active,.menu-toggle:active{
+  transform:scale(.95);
+}
+.explore-link{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  padding:0 18px;
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  border-radius:50px;
+  background:#171717;
+  transition:background .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.explore-link span{
+  display:inline-block;
+  font-size:16px;
+  transition:transform .25s ease;
+}
+.explore-link:hover{
+  color:#fff;
+  background:#6757d9;
+  transform:translateY(-2px);
+  box-shadow:0 9px 22px rgba(103,87,217,.22);
+}
+.explore-link:hover span{
+  transform:translate(3px,-3px);
+}
+.explore-link:active{
+  transform:translateY(0);
+}
+.menu-toggle{
+  display:none;
+}
+/* Expandable Search */
+.navbar-search{
+  max-height:0;
+  overflow:hidden;
+  background:#171717;
+  transition:max-height .35s ease;
+}
+.navbar-search.search-open{
+  max-height:90px;
+}
+.search-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.search-inner svg{
+  flex-shrink:0;
+  color:#a99df5;
+  font-size:22px;
+  transition:transform .25s ease,color .25s ease;
+}
+.search-inner:focus-within svg{
+  color:#fff;
+  transform:scale(1.08);
+}
+.search-inner input{
+  width:100%;
+  padding:12px 0;
+  color:#fff;
+  font-size:17px;
+  border:none;
+  outline:none;
+  background:transparent;
+}
+.search-inner input::placeholder{
+  color:#92908c;
+  transition:color .25s ease;
+}
+.search-inner input:focus::placeholder{
+  color:#6f6c68;
+}
+.clear-navbar-search,.submit-navbar-search{
+  flex-shrink:0;
+  padding:8px 0;
+  color:#c5c2bc;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:1px;
+  border:none;
+  border-bottom:1px solid #77736c;
+  background:transparent;
+  cursor:pointer;
+  text-transform:uppercase;
+  transition:color .25s ease,border-color .25s ease,transform .25s ease;
+}
+.clear-navbar-search{
+  margin-right:8px;
+  color:#96918a;
+}
+.clear-navbar-search:hover,.submit-navbar-search:hover{
+  color:#a99df5;
+  border-color:#a99df5;
+  transform:translateY(-2px);
+}
+.clear-navbar-search:active,.submit-navbar-search:active{
+  transform:translateY(0);
+}
+/* Keyboard Focus */
+.navbar-logo:focus-visible,.navbar-links a:focus-visible,.explore-link:focus-visible,.search-toggle:focus-visible,.menu-toggle:focus-visible,.clear-navbar-search:focus-visible,.submit-navbar-search:focus-visible{
+  outline:2px solid #6757d9;
+  outline-offset:4px;
+}
+/* Tablet and Mobile */
+@media(max-width:850px){
+  .lensora-navbar{
+    min-height:72px;
+  }
+  .navbar-links{
+    width:calc(100% - 24px);
+    display:none;
+    position:absolute;
+    top:72px;
+    left:12px;
+    padding:12px;
+    border:1px solid #dfddd8;
+    border-radius:18px;
+    background:#f8f7f4;
+    box-shadow:0 20px 45px rgba(23,23,23,.12);
+  }
+  .navbar-links.menu-open{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+  }
+  .navbar-links a{
+    width:100%;
+    padding:13px 14px;
+    border-radius:10px;
+    transition:color .25s ease,background .25s ease,padding-left .25s ease;
+  }
+  .navbar-links a:hover{
+    color:#6757d9;
+    background:#ebe9e4;
+    padding-left:20px;
+    transform:none;
+  }
+  .navbar-links a::before{
+    display:none;
+  }
+  .menu-toggle{
+    display:grid;
+  }
+}
+@media(max-width:500px){
+  .logo-text{
+    font-size:19px;
+  }
+  .logo-text small{
+    letter-spacing:1.6px;
+  }
+  .logo-icon{
+    width:39px;
+    height:39px;
+  }
+  .explore-link{
+    display:none;
+  }
+  .search-inner input{
+    font-size:15px;
+  }
+  .submit-navbar-search{
+    display:none;
+  }
+  .clear-navbar-search{
+    margin-right:0;
+  }
+}
