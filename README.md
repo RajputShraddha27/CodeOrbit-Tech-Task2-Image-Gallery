@@ -23,6 +23,10 @@ The project focuses on visual storytelling and provides an interactive experienc
 * Mobile-friendly navigation
 * AI-generated visual collection
 
+## Live Demo
+
+🔗 [View Live Project](https://codeorbit-tech-task2-image-gallery.netlify.app/)
+
 ## Collections
 
 The visual archive includes four categories:
