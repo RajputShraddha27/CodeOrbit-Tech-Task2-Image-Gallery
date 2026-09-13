@@ -104,7 +104,7 @@ lensora/
 Clone the repository:
 
 ```bash
-https://github.com/RajputShraddha27/CodeOrbit-Tech-Task2-Image-Gallery
+git clone https://github.com/RajputShraddha27/CodeOrbit-Tech-Task2-Image-Gallery
 ```
 
 Move into the project directory:
